@@ -37,3 +37,18 @@ gem install mysql2 --platform=ruby -- --with-mysql-dir=C:\Users\MIMP\Documents\m
 - rails webpacker:install //ya no lo instale
 - rails s
 
+Part 2
+- rails g scaffold Product name:string description:string stock:integer 'price:decimal{10,2}'
+- para generarlo de otra forma tenemos:
+- rails generate
+    - generamos el controlador:
+        # rails generate controller [NAME in plural][actions names]
+        - rails generate controller CreditCards principal payment
+    - Generamos el modelo
+        # rails generate model NAME [field[:type][:index] field[:type][:index]] [options]
+        - rails generate model CreditCard no_card:string owner:string provider:string
+    - Ver las migraciones pendientes
+        - rails db:migrate:status //down significa que deben correrse antes de ejecutar la app
+            - rails db:migrate
+            - rails db:migrate:status //deberian estar en up
+
